@@ -1,0 +1,587 @@
+{
+	"_type": "Project",
+	"_id": "AAAAAAFF+h6SjaM2Hec=",
+	"name": "Untitled",
+	"ownedElements": [
+		{
+			"_type": "DFDDataFlowModel",
+			"_id": "AAAAAAF4l9sbBYKl3gI=",
+			"_parent": {
+				"$ref": "AAAAAAFF+h6SjaM2Hec="
+			},
+			"name": "DataFlowModel1",
+			"ownedElements": [
+				{
+					"_type": "DFDDiagram",
+					"_id": "AAAAAAF4l9sbBoKmwlk=",
+					"_parent": {
+						"$ref": "AAAAAAF4l9sbBYKl3gI="
+					},
+					"name": "DFDDiagram1",
+					"ownedViews": [
+						{
+							"_type": "UMLTextView",
+							"_id": "AAAAAAF4l9uqYIKwehQ=",
+							"_parent": {
+								"$ref": "AAAAAAF4l9sbBoKmwlk="
+							},
+							"font": "Arial;13;0",
+							"width": 60,
+							"height": 15
+						},
+						{
+							"_type": "DFDExternalEntityView",
+							"_id": "AAAAAAF4l+JxVYLHgzA=",
+							"_parent": {
+								"$ref": "AAAAAAF4l9sbBoKmwlk="
+							},
+							"model": {
+								"$ref": "AAAAAAF4l+JxVILF2hw="
+							},
+							"subViews": [
+								{
+									"_type": "LabelView",
+									"_id": "AAAAAAF41JubD6j1AhM=",
+									"_parent": {
+										"$ref": "AAAAAAF4l+JxVYLHgzA="
+									},
+									"font": "Arial;13;0",
+									"left": 10,
+									"top": 373,
+									"width": 93,
+									"height": 13
+								},
+								{
+									"_type": "LabelView",
+									"_id": "AAAAAAF41JXq3fzxQK0=",
+									"_parent": {
+										"$ref": "AAAAAAF4l+JxVYLHgzA="
+									},
+									"font": "Arial;13;0",
+									"left": 10,
+									"top": 373,
+									"width": 93,
+									"height": 13
+								},
+								{
+									"_type": "LabelView",
+									"_id": "AAAAAAF4qzlNcvPcSS8=",
+									"_parent": {
+										"$ref": "AAAAAAF4l+JxVYLHgzA="
+									},
+									"font": "Arial;13;0",
+									"left": 10,
+									"top": 373,
+									"width": 93,
+									"height": 13
+								},
+								{
+									"_type": "LabelView",
+									"_id": "AAAAAAF4l+JxV4LNZOA=",
+									"_parent": {
+										"$ref": "AAAAAAF4l+JxVYLHgzA="
+									},
+									"font": "Arial;13;0",
+									"left": 10,
+									"top": 373,
+									"width": 93,
+									"height": 13
+								},
+								{
+									"_type": "LabelView",
+									"_id": "AAAAAAF4l+JxVYLIsU0=",
+									"_parent": {
+										"$ref": "AAAAAAF4l+JxVYLHgzA="
+									},
+									"font": "Arial;13;0",
+									"left": 10,
+									"top": 378,
+									"width": 93,
+									"height": 13,
+									"text": "Remote User",
+									"wordWrap": true
+								},
+								{
+									"_type": "LabelView",
+									"_id": "AAAAAAF4l+JxVYLJrPI=",
+									"_parent": {
+										"$ref": "AAAAAAF4l+JxVYLHgzA="
+									},
+									"font": "Arial;13;0",
+									"top": 368,
+									"height": 13
+								}
+							],
+							"font": "Arial;13;0",
+							"top": 368,
+							"width": 113,
+							"height": 46,
+							"nameLabel": {
+								"$ref": "AAAAAAF4l+JxVYLIsU0="
+							}
+						},
+						{
+							"_type": "DFDExternalEntityView",
+							"_id": "AAAAAAF4l+K9ooLVO9k=",
+							"_parent": {
+								"$ref": "AAAAAAF4l9sbBoKmwlk="
+							},
+							"model": {
+								"$ref": "AAAAAAF4l+K9ooLT+AU="
+							},
+							"subViews": [
+								{
+									"_type": "LabelView",
+									"_id": "AAAAAAF41JubEKj9cy0=",
+									"_parent": {
+										"$ref": "AAAAAAF4l+K9ooLVO9k="
+									},
+									"font": "Arial;13;0",
+									"left": 730,
+									"top": 349,
+									"width": 87.4326171875,
+									"height": 13
+								},
+								{
+									"_type": "LabelView",
+									"_id": "AAAAAAF41JXq3vz4yLw=",
+									"_parent": {
+										"$ref": "AAAAAAF4l+K9ooLVO9k="
+									},
+									"font": "Arial;13;0",
+									"left": 730,
+									"top": 349,
+									"width": 87.4326171875,
+									"height": 13
+								},
+								{
+									"_type": "LabelView",
+									"_id": "AAAAAAF4qzlNc/PiJiE=",
+									"_parent": {
+										"$ref": "AAAAAAF4l+K9ooLVO9k="
+									},
+									"font": "Arial;13;0",
+									"left": 730,
+									"top": 349,
+									"width": 87.4326171875,
+									"height": 13
+								},
+								{
+									"_type": "LabelView",
+									"_id": "AAAAAAF4l+K9ooLb6C4=",
+									"_parent": {
+										"$ref": "AAAAAAF4l+K9ooLVO9k="
+									},
+									"font": "Arial;13;0",
+									"left": 730,
+									"top": 349,
+									"width": 87.4326171875,
+									"height": 13
+								},
+								{
+									"_type": "LabelView",
+									"_id": "AAAAAAF4l+K9ooLW0B0=",
+									"_parent": {
+										"$ref": "AAAAAAF4l+K9ooLVO9k="
+									},
+									"font": "Arial;13;0",
+									"left": 730,
+									"top": 354,
+									"width": 87.4326171875,
+									"height": 13,
+									"text": "Local User",
+									"wordWrap": true
+								},
+								{
+									"_type": "LabelView",
+									"_id": "AAAAAAF4l+K9ooLXWHo=",
+									"_parent": {
+										"$ref": "AAAAAAF4l+K9ooLVO9k="
+									},
+									"font": "Arial;13;0",
+									"left": 720,
+									"top": 344,
+									"height": 13
+								}
+							],
+							"font": "Arial;13;0",
+							"left": 720,
+							"top": 344,
+							"width": 107.4326171875,
+							"height": 72,
+							"nameLabel": {
+								"$ref": "AAAAAAF4l+K9ooLW0B0="
+							}
+						},
+						{
+							"_type": "DFDProcessView",
+							"_id": "AAAAAAF4l+oj14NFja0=",
+							"_parent": {
+								"$ref": "AAAAAAF4l9sbBoKmwlk="
+							},
+							"model": {
+								"$ref": "AAAAAAF4l+oj14NDuiQ="
+							},
+							"subViews": [
+								{
+									"_type": "LabelView",
+									"_id": "AAAAAAF4l+oj2ING+zk=",
+									"_parent": {
+										"$ref": "AAAAAAF4l+oj14NFja0="
+									},
+									"font": "Arial;13;0",
+									"left": 410,
+									"top": 384,
+									"width": 54.18994140625,
+									"height": 26,
+									"text": "System / Software",
+									"wordWrap": true
+								},
+								{
+									"_type": "LabelView",
+									"_id": "AAAAAAF4l+oj2INHwPw=",
+									"_parent": {
+										"$ref": "AAAAAAF4l+oj14NFja0="
+									},
+									"font": "Arial;13;0",
+									"left": 410,
+									"top": 357,
+									"width": 54.18994140625,
+									"height": 13
+								}
+							],
+							"font": "Arial;13;0",
+							"left": 400,
+							"top": 352,
+							"width": 74.18994140625,
+							"height": 69,
+							"nameLabel": {
+								"$ref": "AAAAAAF4l+oj2ING+zk="
+							},
+							"idLabel": {
+								"$ref": "AAAAAAF4l+oj2INHwPw="
+							}
+						},
+						{
+							"_type": "DFDDataFlowView",
+							"_id": "AAAAAAF4l+qCdINnLjA=",
+							"_parent": {
+								"$ref": "AAAAAAF4l9sbBoKmwlk="
+							},
+							"model": {
+								"$ref": "AAAAAAF4l+qCdINlkiM="
+							},
+							"subViews": [
+								{
+									"_type": "EdgeLabelView",
+									"_id": "AAAAAAF4l+qCdINoSrI=",
+									"_parent": {
+										"$ref": "AAAAAAF4l+qCdINnLjA="
+									},
+									"model": {
+										"$ref": "AAAAAAF4l+qCdINlkiM="
+									},
+									"visible": false,
+									"font": "Arial;15;0",
+									"showShadow": false,
+									"left": 180,
+									"top": 260,
+									"width": 153.42041015625,
+									"height": 15,
+									"alpha": 1.5707961381156514,
+									"distance": 53,
+									"hostEdge": {
+										"$ref": "AAAAAAF4l+qCdINnLjA="
+									},
+									"edgePosition": 1,
+									"text": "image capture request "
+								}
+							],
+							"font": "Arial;13;0",
+							"head": {
+								"$ref": "AAAAAAF4l+oj14NFja0="
+							},
+							"tail": {
+								"$ref": "AAAAAAF4l+JxVYLHgzA="
+							},
+							"lineStyle": 2,
+							"points": "112:368;112:320;400:320;400:352",
+							"nameLabel": {
+								"$ref": "AAAAAAF4l+qCdINoSrI="
+							}
+						},
+						{
+							"_type": "UMLTextView",
+							"_id": "AAAAAAF4l+9OBYOQhSs=",
+							"_parent": {
+								"$ref": "AAAAAAF4l9sbBoKmwlk="
+							},
+							"font": "Arial;13;0",
+							"left": 128,
+							"top": 208,
+							"width": 321,
+							"height": 97,
+							"text": "Manage device setting        \nSend capture image request                                        move the stage                \nadditional hardware requests                            provide remote scripting of expriments                       connect via IP"
+						},
+						{
+							"_type": "DFDDataFlowView",
+							"_id": "AAAAAAF4l/HaVIOmEVY=",
+							"_parent": {
+								"$ref": "AAAAAAF4l9sbBoKmwlk="
+							},
+							"model": {
+								"$ref": "AAAAAAF4l/HaVIOke9E="
+							},
+							"subViews": [
+								{
+									"_type": "EdgeLabelView",
+									"_id": "AAAAAAF4l/HaVYOnr7Q=",
+									"_parent": {
+										"$ref": "AAAAAAF4l/HaVIOmEVY="
+									},
+									"model": {
+										"$ref": "AAAAAAF4l/HaVIOke9E="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": 255,
+									"top": 465,
+									"height": 13,
+									"alpha": 1.5707963267948966,
+									"distance": 15,
+									"hostEdge": {
+										"$ref": "AAAAAAF4l/HaVIOmEVY="
+									},
+									"edgePosition": 1
+								}
+							],
+							"font": "Arial;13;0",
+							"head": {
+								"$ref": "AAAAAAF4l+JxVYLHgzA="
+							},
+							"tail": {
+								"$ref": "AAAAAAF4l+oj14NFja0="
+							},
+							"lineStyle": 2,
+							"points": "400:420;400:456;112:456;112:413",
+							"nameLabel": {
+								"$ref": "AAAAAAF4l/HaVYOnr7Q="
+							}
+						},
+						{
+							"_type": "UMLTextView",
+							"_id": "AAAAAAF4l/IdK4OxRjU=",
+							"_parent": {
+								"$ref": "AAAAAAF4l9sbBoKmwlk="
+							},
+							"font": "Arial;13;0",
+							"left": 120,
+							"top": 472,
+							"width": 305,
+							"height": 113,
+							"text": "Receive stage movement  response                    \nReceive motor movement response              \nObtain camera response  feed                    Extensible responses                                      Obtain IP connection feedback                                Store data on the system"
+						},
+						{
+							"_type": "UMLTextView",
+							"_id": "AAAAAAF4mAFpDIPQlIs=",
+							"_parent": {
+								"$ref": "AAAAAAF4l9sbBoKmwlk="
+							},
+							"font": "Arial;13;0",
+							"left": 472,
+							"top": 184,
+							"width": 257,
+							"height": 105,
+							"text": "Manage device setting        \nimage capture request                            local mDNS discovery request           \nmove the stage                \nadditional hardware requests          \nprovide remote scripting of expriments"
+						},
+						{
+							"_type": "DFDDataFlowView",
+							"_id": "AAAAAAF4mDT2CpLBcaU=",
+							"_parent": {
+								"$ref": "AAAAAAF4l9sbBoKmwlk="
+							},
+							"model": {
+								"$ref": "AAAAAAF4mDT2CZK/nv8="
+							},
+							"subViews": [
+								{
+									"_type": "EdgeLabelView",
+									"_id": "AAAAAAF4mDT2CpLCfto=",
+									"_parent": {
+										"$ref": "AAAAAAF4mDT2CpLBcaU="
+									},
+									"model": {
+										"$ref": "AAAAAAF4mDT2CZK/nv8="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": 595,
+									"top": 321,
+									"height": 13,
+									"alpha": 1.5707963267948966,
+									"distance": 15,
+									"hostEdge": {
+										"$ref": "AAAAAAF4mDT2CpLBcaU="
+									},
+									"edgePosition": 1
+								}
+							],
+							"font": "Arial;13;0",
+							"head": {
+								"$ref": "AAAAAAF4l+oj14NFja0="
+							},
+							"tail": {
+								"$ref": "AAAAAAF4l+K9ooLVO9k="
+							},
+							"lineStyle": 2,
+							"points": "720:344;720:312;473:312;473:352",
+							"nameLabel": {
+								"$ref": "AAAAAAF4mDT2CpLCfto="
+							}
+						},
+						{
+							"_type": "DFDDataFlowView",
+							"_id": "AAAAAAF4q9FcZmuiyHc=",
+							"_parent": {
+								"$ref": "AAAAAAF4l9sbBoKmwlk="
+							},
+							"model": {
+								"$ref": "AAAAAAF4q9FcZWugwwA="
+							},
+							"subViews": [
+								{
+									"_type": "EdgeLabelView",
+									"_id": "AAAAAAF4q9FcZmujHFw=",
+									"_parent": {
+										"$ref": "AAAAAAF4q9FcZmuiyHc="
+									},
+									"model": {
+										"$ref": "AAAAAAF4q9FcZWugwwA="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": 596,
+									"top": 419,
+									"height": 13,
+									"alpha": 1.5707963267948966,
+									"distance": 15,
+									"hostEdge": {
+										"$ref": "AAAAAAF4q9FcZmuiyHc="
+									},
+									"edgePosition": 1
+								}
+							],
+							"font": "Arial;13;0",
+							"head": {
+								"$ref": "AAAAAAF4l+K9ooLVO9k="
+							},
+							"tail": {
+								"$ref": "AAAAAAF4l+oj14NFja0="
+							},
+							"lineStyle": 2,
+							"points": "473:420;473:440;720:440;720:415",
+							"nameLabel": {
+								"$ref": "AAAAAAF4q9FcZmujHFw="
+							}
+						},
+						{
+							"_type": "UMLTextView",
+							"_id": "AAAAAAF4q9WmmmvXo04=",
+							"_parent": {
+								"$ref": "AAAAAAF4l9sbBoKmwlk="
+							},
+							"font": "Arial;13;0",
+							"left": 488,
+							"top": 448,
+							"width": 273,
+							"height": 146,
+							"text": "Store data locally                                     Provide HDMI and USB support              Receive stage movement  response                Receive motor movement response              \nObtain camera response  feed                  Extensible responses                                      Obtain IP connection feedback                        Store data on the system"
+						}
+					]
+				},
+				{
+					"_type": "DFDExternalEntity",
+					"_id": "AAAAAAF4l+JxVILF2hw=",
+					"_parent": {
+						"$ref": "AAAAAAF4l9sbBYKl3gI="
+					},
+					"name": "Remote User",
+					"ownedElements": [
+						{
+							"_type": "DFDDataFlow",
+							"_id": "AAAAAAF4l+qCdINlkiM=",
+							"_parent": {
+								"$ref": "AAAAAAF4l+JxVILF2hw="
+							},
+							"source": {
+								"$ref": "AAAAAAF4l+JxVILF2hw="
+							},
+							"target": {
+								"$ref": "AAAAAAF4l+oj14NDuiQ="
+							}
+						}
+					]
+				},
+				{
+					"_type": "DFDExternalEntity",
+					"_id": "AAAAAAF4l+K9ooLT+AU=",
+					"_parent": {
+						"$ref": "AAAAAAF4l9sbBYKl3gI="
+					},
+					"name": "Local User",
+					"ownedElements": [
+						{
+							"_type": "DFDDataFlow",
+							"_id": "AAAAAAF4mDT2CZK/nv8=",
+							"_parent": {
+								"$ref": "AAAAAAF4l+K9ooLT+AU="
+							},
+							"source": {
+								"$ref": "AAAAAAF4l+K9ooLT+AU="
+							},
+							"target": {
+								"$ref": "AAAAAAF4l+oj14NDuiQ="
+							}
+						}
+					]
+				},
+				{
+					"_type": "DFDProcess",
+					"_id": "AAAAAAF4l+oj14NDuiQ=",
+					"_parent": {
+						"$ref": "AAAAAAF4l9sbBYKl3gI="
+					},
+					"name": "System / Software",
+					"ownedElements": [
+						{
+							"_type": "DFDDataFlow",
+							"_id": "AAAAAAF4l/HaVIOke9E=",
+							"_parent": {
+								"$ref": "AAAAAAF4l+oj14NDuiQ="
+							},
+							"source": {
+								"$ref": "AAAAAAF4l+oj14NDuiQ="
+							},
+							"target": {
+								"$ref": "AAAAAAF4l+JxVILF2hw="
+							}
+						},
+						{
+							"_type": "DFDDataFlow",
+							"_id": "AAAAAAF4q9FcZWugwwA=",
+							"_parent": {
+								"$ref": "AAAAAAF4l+oj14NDuiQ="
+							},
+							"source": {
+								"$ref": "AAAAAAF4l+oj14NDuiQ="
+							},
+							"target": {
+								"$ref": "AAAAAAF4l+K9ooLT+AU="
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}
