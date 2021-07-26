@@ -1,0 +1,213 @@
+\documentclass[10pt,a4paper, margin=1in]{article}
+\usepackage{fullpage}
+\usepackage{amsfonts, amsmath, pifont}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{tkz-euclide}
+\usepackage{tikz}
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={210mm,297mm},
+ left=10mm,
+ right=10mm,
+ top=10mm,
+ bottom=10mm,
+ }
+ % Write both of your names here. Fill exxxxxxx with your ceng mail address.
+ \author{
+  Yesilkaya, Alparslan\\
+  \texttt{e2237923@ceng.metu.edu.tr}
+  \and
+  Kekik, Talha\\
+  \texttt{e2310233@ceng.metu.edu.tr}
+}
+\title{CENG 384 - Signals and Systems for Computer Engineers \\
+Spring 2021 \\
+Homework 4}
+\begin{document}
+\maketitle
+
+
+
+\noindent\rule{19cm}{1.2pt}
+
+\begin{enumerate}
+
+\item %write the solution of q1
+    \begin{enumerate}
+    % Write your solutions in the following items.
+    \item %write the solution of q1a
+    $\int(\int(x(t)-6y(t))+4x(t)-5y(t)) = y(t)$\\\\
+    $\int(x(t)-6y(t))+4x(t)-5y(t)= \dfrac{dy(t)}{dt}$\\\\
+    $x(t)-6y(t) + \dfrac{4dx(t)}{dt} - \dfrac{5dy(t)}{dt}=\dfrac{d^{2}y(t)}{dt}$\\\\
+
+    \item %write the solution of q1b
+    If we take Fourier transform of the equation, we get the following.\\\\
+   $X(jw) -6Y(jw)+4(jw)X(jw)-5(jw)Y(jw)=(jw)^{2}Y(jw)$\\\\
+   $X(jw)-6H(jw)X(jw)+4(jw)X(jw)-5(jw)X(jw)H(jw) = (jw)^{2}H(jw)X(jw)$\\\\
+   $1-6H(jw)+4(jw)-5(jw)H(jw)=(jw)^{2}H(jw)$\\\\
+   $1+4(jw)=H(jw)((jw)^{2}+5jw +6)$\\\\
+   $H(jw)=\dfrac{1+4jw}{(jw^{2}+5jw+6)}=\dfrac{11}{jw+3}+\dfrac{-7}{jw+2}$\\\\
+
+    \item %write the solution of q1c
+    Using the inverse Fourier transform, we get the following\\\\
+    $h(t) = 11e^{-3t}u(t)-7e^{-2t}u(t)$\\\\
+    \item %write the solution of q1d
+    $x(t)=\dfrac{1}{4}e^{-3t}u(t) \longrightarrow X(jw)=  \dfrac{1}{1+4jw}$\\\\
+    $Y(jw)=H(jw)X(jw)=(\dfrac{11}{jw+3} -\dfrac{7}{jw+2})(\dfrac{1}{1+4jw})$\\\\
+    Performing the multiplication and partial fraction expansion we get the following.\\\\
+    $Y(jw)=\dfrac{1}{jw+2} + \dfrac{-1}{jw+3}$\\\\
+    Applying inverse FT, we get the following.\\\\
+    $y(t)=e^{-2t}u(t) - e^{-3t}u(t)$\\\\
+    \end{enumerate}
+
+\item %write the solution of q2
+    \begin{enumerate}
+    % Write your solutions in the following items.
+    \item %write the solution of q2a
+    $H(jw)=\dfrac{Y(jw)}{X(jw)}=\dfrac{jw+4}{-w^{2}+5jw+6}$\\\\
+    $-w^{2}Y(jw) +5jwY(jw)+6Y(jw)=jwX(jw)+4X(jw)$\\\\
+    $\dfrac{d^{2}y(t)}{dt^{2}} +5\dfrac{dy(t)}{dt} + 6y(t)=\dfrac{dx(t)}{dt}+4x(t)$\\\\
+
+    \item %write the solution of q2b
+    $H(jw)=\dfrac{jw+4}{-w^{2}+5jw+6}=\dfrac{A}{jw+3}+\dfrac{B}{jw+2}$\\\\
+    If we apply partial fraction expansion we get the following.\\\\
+    $H(jw)= \dfrac{-1}{jw+3}+\dfrac{2}{jw+2}$\\\\
+    $h(t)=2e^{-2t}u(t)-e^{-3t}u(t)$\\\\
+    \item %write the solution of q2c
+    We know that $Y(jw)=X(jw)H(jw)$\\\\
+    $X(jw)= (\dfrac{1}{4+jw} - \dfrac{1}{(4+jw)^{2}})(\dfrac{-1}{jw+3}+\dfrac{2}{jw+2})$\\\\
+    If we perform multiplication and partial fraction expansion we get the following.\\\\
+    $Y(jw)=(\dfrac{1}{6})\dfrac{1}{4+jw} +(\dfrac{-3}{4})(\dfrac{1}{jw+3})+ (\dfrac{4}{3})\dfrac{1}{(4+jw)^{2}}+(\dfrac{1}{2})(\dfrac{1}{jw+2})$\\\\
+    \item %write the solution of q2d
+    If we use the lookup table, we would get the following.\\\\
+    $y(t)= (\dfrac{1}{6})e^{-4t}u(t) + (\dfrac{-3}{4})e^{-3t}u(t)+ (\dfrac{4}{3})te^{-4t}u(t) + \dfrac{1}{2}e^{-2t}u(t)$
+    \end{enumerate}
+
+\item %write the solution of q3
+    \begin{enumerate}
+    % Write your solutions in the following items.
+    \item %write the solution of q3a
+    if we apply analysis equation,\\\\
+    $\int^{-\infty}_{\infty}e^{-|t|}e^{-jwt}dt = \int^{0}_{-\infty}e^{t}e^{-jwt}dt + \int^{\infty}_{0}e^{-t}e^{-jwt}dt $\\\\
+    $=\int^{0}_{-\infty}e^{t(1-jw)}dt + \int^{\infty}_{0}e^{t(-1-jw)}dt$\\\\
+    $=\dfrac{e^{t(1-jw)}}{1-jw}|^{0}_{-\infty} + \dfrac{e^{t(-1-jw)}}{-1-jw}|^{\infty}_{0}$\\\\
+    $=\dfrac{1}{1-jw} + \dfrac{1}{1+jw} = \dfrac{2}{1+w^{2}}$\\\\
+    \item %write the solution of q3b
+    If we apply differentiation property to $e^{-|t|}$, we get the following.\\\\
+    $te^{-|t|} \Longleftrightarrow^{F.T}$ $\dfrac{jd}{dw}X(jw)$\\\\
+    $te^{-|t|} \Longleftrightarrow^{F.T}$ $j(\dfrac{-4w}{1+w^{2}})$\\\\
+    $F\{te^{-|t|}\}=$ $j(\dfrac{-4w}{1+w^{2}})$\\\\
+
+    \item %write the solution of q3c
+    $te^{-|t|} \Longleftrightarrow^{F.T} \dfrac{-4jw}{(1+w^{2})^{2}}$\\\\
+    Apply inverse Fourier transform\\\\
+    $te^{-|t|}= \dfrac{1}{2\pi}\int^{\infty}_{-\infty}\dfrac{-4jw}{1+w^{2}}e^{jwt}dw$\\\\
+    Multiply by $2\pi$ and write "-t" instead of "t"\\\\
+    $2\pi te^{-|t|}= \int^{\infty}_{-\infty}\dfrac{-4jw}{(1+w^{2})^2}e^{-jwt}dw$\\\\
+    Exchange "t" with "w".\\\\
+    $2\pi w e^{-|w|} = \int^{\infty}_{-\infty}\dfrac{4jt}{(1+t^2)^{2}}e^{-jwt}dt$\\\\
+    Multiply both sides with "j"\\\\
+    $2\pi jwe^{-|w|}= \int^{\infty}_{-\infty}\dfrac{4j^{2}t}{(1+t^{2})^{2}}e^{-jwt}dt$\\\\
+    $-2\pi jwe^{-|w|} = \int^{\infty}_{-\infty}\dfrac{4t}{(1+t^{2})^{2}}e^{-jwt}dt$\\\\
+    From the equation above, we observe that Fourier transform of $\dfrac{4t}{(1+t^{2})^{2}}$ is $-2\pi jwe^{-|w|}$.
+
+    \end{enumerate}
+
+\item %write the solution of q4
+    \begin{enumerate}
+    % Write your solutions in the following items.
+    \item %write the solution of q4a
+    $2x[n] - \dfrac{1}{8} y[n-2] + \dfrac{3}{4} y[n-1] = y[n]$ \\ \\
+    $2x[n] = \dfrac{1}{8} y[n-2] - \dfrac{3}{4} y[n-1] + y[n]$ \\ \\
+
+    \item %write the solution of q4b
+    If we perform Fourier transform we get the following \\ \\
+    $2X[jw] = \dfrac{1}{8} e^{-2jw} Y(jw) - \dfrac{3}{4}e^{-jw} Y(jw) + Y(jw)$ \\ \\
+    $2X[jw] = Y(jw)(\dfrac{1}{8} e^{-2jw} - \dfrac{3}{4}e^{-jw} + 1)$ \\ \\
+    $2X[jw] = X[jw]H[jw](\dfrac{1}{8} e^{-2jw} - \dfrac{3}{4}e^{-jw} + 1)$ \\ \\
+    $H[jw] = \dfrac{2}{\dfrac{1}{8} e^{-2jw} - \dfrac{3}{4}e^{-jw} + 1} = - \dfrac{2}{1- e^{-jw}/4}$ \\ \\
+
+    \item %write the solution of q4c
+
+    If we take the inverse of the fourier transform of part b we get the following \\ \\
+    $h[n] = 4 (1/2)^n u[n] - 2 (1/4)^n u[n]$ \\ \\
+
+    \item %write the solution of q4d
+    $X(e^{jw}) = \dfrac{1}{1- e^{-jw}/4}$, and we know $Y(e^{jw}) = X(e^{jw}) H(e^{jw})$ \\ \\
+    $Y(e^{jw}) = \dfrac{8}{1- (e^{-jw}/2)} + \dfrac{-4}{1- (e^{-jw}/4)} + \dfrac{-2}{(1- (e^{-jw}/4)})^2 $ \\ \\
+    Take Fourier transform. \\ \\
+    $y[n] = 8 (1/2)^n u[n] - 2(n+1) (1/4)^n u[n] - 4(1/4)^n u[n]$ \\ \\
+    \end{enumerate}
+
+\item %write the solution of q5
+    $h[n] = h_1[n] + h_2[n]$ \\ \\
+    $H(e^{jw}) = H_1(e^{jw}) + H_2(e^{jw})$ \\ \\
+    $H_1(e^{jw}) = \dfrac{1}{ 1- (e^{-jw}/3)}$ \\ \\
+    $H_2(e^{jw}) = \dfrac{1}{1- (e^{-jw}/6) - (e^{-2jw}/6) } - \dfrac{1}{ 1- (e^{-jw}/3)} = \dfrac{-2}{1- (e^{-jw}/4)}$ \\ \\
+    Aplly inverse Fourier Transform \\
+    $h_2[n] = -2(1/4)^n u[n]$ \\ \\
+
+
+\item %write the solution of q6
+    \begin{enumerate}
+    % Write your solutions in the following items.
+    \item %write the solution of q6a
+    $H(e^{jw}) = \dfrac{Y(e^{jw})}{X(e^{jw})} = \dfrac{1}{ 1- (e^{-jw}/6) - (e^{-2jw}/6)}$ \\
+    $Y(e^{jw}) - (e^{-jw}/6)Y(e^{jw}) - (e^{-2jw}/6)Y(e^{jw}) = X(e^{jw}) $ \\ \\
+    Take the inverse Fourier Transform \\
+    $y[n] - y[n-1]/6 - y[n-2]/6 = x[n]$ \\ \\
+    \item %write the solution of q6b
+
+\begin{center}
+	\tikzset{%
+		block/.style    = {draw, thick, rectangle, minimum height = 3em,
+			minimum width = 3em},
+		sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+		input/.style    = {coordinate}, % Input
+		output/.style   = {coordinate} % Output
+	}
+	% Defining string as labels of certain blocks.
+	\newcommand{\suma}{\Large$+$}
+	\newcommand{\inte}{$\displaystyle \int$}
+	\newcommand{\derv}{\huge$\frac{d}{dt}$}
+	\tikzstyle{int}=[draw, fill=blue!20, minimum size=2em]
+	\begin{tikzpicture}[auto, thick, node distance=2cm, >=triangle 45]
+	\draw
+	% Drawing the blocks of first filter :
+	node at (0, 0) [input] (inp) {\Large \textopenbullet}
+	node [sum, right of=inp] (sum) {\suma}
+	node [output, right of=sum] (out) {}
+	node [output, right of=out] (out2) {\Large \textopenbullet}
+	node [int, above of=out] (d3) {$D$}
+	node [output, above of=sum] (temp1) {}
+	node [int, below of=out] (d1) {$D$}
+	node [int, below of=sum] (d2) {$D$}
+
+	;
+	\draw[->](inp) -- node{$x[n]$} (sum);
+	\draw[-](sum) -- node{} (out);
+	\draw[->](out) -- node{$y[n]$} (out2);
+	\draw[->](out) -- (d1);
+    \draw[->](d1) -- (d2);
+    \draw[->](d2) -- node{+1/6}(sum);
+        \draw[->](out) -- (d3);
+            \draw[-](d3) -- (temp1);
+                \draw[->](temp1) -- node{+1/6}(sum);
+
+	\end{tikzpicture}
+\end{center}
+
+    \item %write the solution of q6c
+    $H(e^{jw}) = \dfrac{Y(e^{jw})}{X(e^{jw})} = \dfrac{6}{(3+ e^{-jw}) + (2 - e^{-jw})}$ \\ \\
+    $H(e^{jw}) = \dfrac{6/5}{3 + e^{-jw}} + \dfrac{6/5}{2 - e^{-jw}} = $ \\ \\
+    $\dfrac{6}{15} (1/(1 + e^{-jw}/3)) + \dfrac{6}{10}(1/(1 - e^{-jw}/2))$ \\ \\
+    Apply inverse F.T. \\
+    $h[n] = \dfrac{6}{15} (-1/3)^n u[n] + \dfrac{6}{10} (1/2)^n u[n]$ \\ \\
+    $h[n] = \dfrac{2}{5} (-1/3)^n u[n] + \dfrac{3}{5} (1/2)^n u[n]$ \\ \\
+    \end{enumerate}
+
+\end{enumerate}
+\end{document}

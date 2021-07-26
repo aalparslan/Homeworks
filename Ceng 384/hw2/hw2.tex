@@ -1,0 +1,367 @@
+\documentclass[10pt,a4paper, margin=1in]{article}
+\usepackage{fullpage}
+\usepackage{amsfonts, amsmath, pifont}
+\usepackage{amsthm}
+\usepackage{graphicx}
+
+\usepackage[utf8]{inputenc}
+
+\usepackage{float}
+
+\usepackage{tkz-euclide}
+\usepackage{tikz}
+\usepackage{pgfplots}
+
+\usepackage{geometry}
+\pgfplotsset{compat=1.13}
+
+ \geometry{
+ a4paper,
+ total={210mm,297mm},
+ left=10mm,
+ right=10mm,
+ top=10mm,
+ bottom=10mm,
+ }
+ % Write both of your names here. Fill exxxxxxx with your ceng mail address.
+ \author{
+  Yeşilkaya, Alparslan\\
+  \texttt{e2237923@ceng.metu.edu.tr}
+  \and
+  Kekik, Talha\\
+  \texttt{e2310233@ceng.metu.edu.tr}
+}
+\title{CENG 384 - Signals and Systems for Computer Engineers \\
+Spring 2021 \\
+Homework 2}
+\begin{document}
+\maketitle
+
+
+
+\noindent\rule{19cm}{1.2pt}
+
+\begin{enumerate}
+
+\item %write the solution of q1
+    \begin{enumerate}
+    % Write your solutions in the following items.
+    \item %write the solution of q1a
+    $x(t)-5y(t)-6 \int y(t)\,dt=y'(t)$ \\
+    $x'(t)-5y'(t)-6y(t)=y''(t)$ \\
+    $x'(t)=y''(t)+5y'(t)+6y(t)$ \\ \\
+    \item %write the solution of q1b
+    We can find y(t) by computing homogenous  and particular solutions. \\ \\
+    $y(t)=y_h(t)+y_p(t)$ \\ \\
+    To find $y_h(t)$ we assume $y_h(t)=C.e^{\alpha t}$, which is the general form. \\ \\
+    $y_h'(t)=C\alpha e^{\alpha t}$ and $y_h''(t)=C\alpha^2 e^{\alpha t}$ \\ \\
+    $C\alpha^2 e^{\alpha t} + 5C\alpha e^{\alpha t} + 6Ce^{\alpha t}=0$ \\ \\
+    $\alpha^2+5\alpha+6=0$ \\ \\
+    Thus we find, $\alpha_1 = -2, \alpha_2 = -3$ \\ \\
+    $y_H(t) = C_1e^{-2t} + C_2e^{-3t}$ \\ \\
+    Then we find particular solution. \\ \\
+    $y_p(t)=A e^{-t} u(t) + B e^{-4t} u(t)$ \\ \\
+    $y'_p(t)=-A e^{-t} u(t) - 4B e^{-4t} u(t)$ \\ \\
+    $y''_p(t)=A e^{-t} u(t) + 16B e^{-4t} u(t)$ \\ \\
+    If we insert the variables to the equation, we get the following. \\\\
+    $A e^{-t} u(t) + 16B e^{-4t} u(t) - 5A e^{-t} u(t) - 20B e^{-4t} u(t) + 6A e^{-t} u(t) + 6B e^{-4t} u(t) = e^{-t}u(t) + e^{-4t}u(t)$ \\ \\
+    $A = \dfrac{1}{2}$ and $B=\dfrac{1}{2}$ \\ \\
+    Thus we get, $y_p(t)= \dfrac{1}{2}e^{-t} u(t) + \dfrac{1}{2} e^{-4t} u(t)$ \\ \\
+    $y(t)=y_h(t)+y_p(t) = C_1e^{-2t} + C_2e^{-3t} + \dfrac{1}{2}e^{-t} u(t) + \dfrac{1}{2} e^{-4t} u(t)$ \\ \\
+    Due to initial rest, $y'(0)=y(0)=0$ \\ \\
+    $y'(t)=-2 C_1e^{-2t} -3 C_2e^{-3t} - \dfrac{1}{2}e^{-t} u(t) + -2 e^{-4t} u(t)$ \\ \\
+    $y'(0)=-2 C_1 -3 C_2 - \dfrac{1}{2}  -2 = 0$ \\ \\
+    $y(0) = C_1 + C_2 + 1 = 0 $\\\\
+    $C_2=-\dfrac{1}{2}$ and $C_1=-\dfrac{1}{2}$ \\ \\
+    $y(t)=[-\dfrac{1}{2}e^{-2t} -\dfrac{1}{2}e^{-3t} - \dfrac{1}{2}e^{-t} u(t) + -\dfrac{1}{2} e^{-4t}]u(t)$ \\ \\
+    \end{enumerate}
+
+\item %write the solution of q2
+    \begin{enumerate}
+    % Write your solutions in the following items.
+    \item %write the solution of q2a
+    $x[n]=\delta[n] + \delta[n-1]$, $y[n]=\delta[n-1]$ \\ \\
+    $x_1[n]$ can be written in terms of x[n] \\ \\
+    $x_1[n] = x[n] -x[n-2]$ \\ \\
+    Similarly from linearity, \\ \\
+    $y_1[n]=y[n]-y[n-2] = \delta[n-1] - \delta[n-3]$ \\ \\
+    \item %write the solution of q2b
+    Since a certain solution method has not been suggested, we are going to apply Fourier transformation in this question to find the impulse response of the system.\\\\
+    Applying convolution property of the Fourier transform, we have the following.\\\\
+    $y[n]=x[n]*h[n] \rightarrow^{FT}$  $Y(w) = X(w).H(w)$ \\ \\
+    $x[n]=\delta[n]+\delta[n-1] \rightarrow^{FT}$ $X(w)=1+e^{-jw}$ \\ \\
+    $y[n] = \delta[n-1] \rightarrow^{FT}$  $Y(w)=e^{-jw}$ \\ \\
+    $H(w)=\dfrac{Y(w)}{X(w)} = \dfrac{e^{-jw}}{1+e^{-jw}} = \dfrac{1}{1+e^{jw}}$ \\ \\
+    $h[n] = (-1)^{n-1}u[n-1]$ \\ \\
+
+
+
+    \begin{filecontents}{q7.dat}
+ n   xn
+ 1   1
+ 2  -1
+ 3  1
+ 4   -1
+\end{filecontents}
+    Plot of $h[n]$
+    \begin{figure} [H]
+    \centering
+    \begin{tikzpicture}[scale=1.0]
+      \begin{axis}[
+          axis lines=middle,
+          xlabel={$n$},
+          ylabel={$h[n]$},
+          xtick={ 0,  ..., 5},
+          ytick={-2, ..., 2},
+          ymin=-2, ymax=2,
+          xmin=0, xmax=5,
+          every axis x label/.style={at={(ticklabel* cs:1.05)}, anchor=west,},
+          every axis y label/.style={at={(ticklabel* cs:1.05)}, anchor=south,},
+          grid,
+        ]
+        \addplot [ycomb, black, thick, ->] table [x={n}, y={xn}] {q7.dat};
+        \draw[->] (axis cs:1,0) -- (axis cs:1,1);
+        \draw[->] (axis cs:2,0) -- (axis cs:2,-1);
+        \draw[->] (axis cs:3,0) -- (axis cs:3,1);
+        \draw[->] (axis cs:4,0) -- (axis cs:4,-1);
+      \end{axis}
+    \end{tikzpicture}
+\end{figure}
+
+    \item %write the solution of q2c
+    $y[n]= \delta[n-1]$,  $x[n]=\delta[n] + \delta[n-1]$ \\ \\
+    If we add y[n] and y[n+1] we get,  $\delta[n] + \delta[n-1]$ which is equal to x[n] \\ \\
+    $y[n] + y[n+1] = x[n]$ \\ \\
+    \item %write the solution of q2d
+    Block diagram:
+\tikzstyle{int}=[draw, fill=blue!20, minimum size=2em]
+\tikzstyle{sum} = [draw, fill=blue!20, circle, node distance=1cm]
+\tikzstyle{input} = [coordinate]
+\tikzstyle{output} = [coordinate]
+\tikzstyle{pinstyle} = [pin edge={to-,thin,black}]
+
+% The block diagram code is probably more verbose than necessary
+\begin{tikzpicture}[auto, node distance=2cm,>=latex']
+    % We start by placing the blocks
+    \node [input, name=input] {};
+    \node [sum, right of=input] (sum) {+};
+    % We draw an edge between the controller and system block to
+    % calculate the coordinate u. We need it to place the measurement block.
+    \node [output, right of=sum, name=output] (output) {$y[n]$};
+    \node [int, below of=output] (measurements) {A};
+
+    % Once the nodes are placed, connecting them is easy.
+    \draw [draw,->] (input) -- node {$x[n]$} (sum);
+    \draw [->] (sum) -- node  {$y[n]$}(output);
+    \draw [->] (output) -| (measurements);
+    \draw [->] (measurements) -|  node [near end] {$-1$} (sum);
+\end{tikzpicture}
+
+    \end{enumerate}
+
+\item %write the solution of q3
+    \begin{enumerate}
+    % Write your solutions in the following items.
+    \item %write the solution of q3a
+    $x[n] =  \delta[n-3] + 2\delta[n+1]$ , $h[n] = \delta[n-1] +3\delta[n+2]$ \\ \\
+    $x[n]*h[n] = \sum\limits_{k=-\infty}^{\infty} x[k]h[n-k]$ \\ \\
+    Apply distributive property of convolution \\ \\
+    $x[n]*h[n] = \delta[n-3]*h[n] + 2\delta[n+1]*h[n]$ \\ \\
+    $= \delta[n-3]*\delta[n-1] + 3\delta[n-3]*\delta[n+2] + 2\delta[n+1]*\delta[n-1] + 6\delta[n+1]*\delta[n+2]$ \\ \\
+    $= \sum\limits_{k=-\infty}^{\infty} \delta[k-3]\delta[n-k-1] +
+    \sum\limits_{k=-\infty}^{\infty} 3\delta[k-3]\delta[n-k+2] +
+    \sum\limits_{k=-\infty}^{\infty} 2\delta[k+1]\delta[n-k-1] +
+    \sum\limits_{k=-\infty}^{\infty} 6\delta[k+1]\delta[n-k+2]$ \\ \\
+    Now the "sifting" property of the $\delta$ function is that \\ \\
+    $\sum\limits_{k=-\infty}^{\infty} f[k] \delta[a-k] = f[a]$ \\ \\
+    Therefore the result is \\ \\
+    $ = \delta[n-4] + 3\delta[n-1] +2\delta[n] + 6\delta[n+3]$ \\ \\
+
+
+        \begin{filecontents}{q4.dat}
+ n   xn
+ -3   6
+ 1  3
+ 0  2
+ 4  1
+\end{filecontents}
+    Plot of $x[n]*h[n]$
+    \begin{figure} [H]
+    \centering
+    \begin{tikzpicture}[scale=1.0]
+      \begin{axis}[
+          axis lines=middle,
+          xlabel={$n$},
+          ylabel={$h[n]$},
+          xtick={ -4,  ..., 5},
+          ytick={-1, ..., 7},
+          ymin=-1, ymax=7,
+          xmin=-4, xmax=5,
+          every axis x label/.style={at={(ticklabel* cs:1.05)}, anchor=west,},
+          every axis y label/.style={at={(ticklabel* cs:1.05)}, anchor=south,},
+          grid,
+        ]
+        \addplot [ycomb, black, thick, mark=*] table [x={n}, y={xn}] {q4.dat};
+      \end{axis}
+    \end{tikzpicture}
+\end{figure}
+
+
+    \item %write the solution of q3b
+    $x[n]*h[n] = \sum\limits_{k=-\infty}^{\infty} x[k]h[n-k]$ where \\ \\
+    $x[n] = u[n+3] - u[n]$ and $h[n]=u[n-1]-u[n-3]$ \\ \\
+    As it can be seen from the equations x[n] and h[n] are square functions. When we convolute square functions we need to find some intervals, since multiplication of the function may show different behaviours in different intervals. \\ \\
+    if $n-1 < -3$ then $x[k]h[n-k]=0$ since no overlapping \\ \\
+    if $n-1 \geq -3$ and $n-3 < -3$ , $-2 \leq n < 0$ then $x[k]h[n-k]=
+    \sum\limits_{k=-2}^{0} (n+2)$ \\ \\
+    if $n-3 \geq -3 $ and $n-1 < 0$ , $0 \leq n < 1$ then $x[k]h[n-k]=2$ \\ \\
+    if $n-3 \leq 0$ and $n-1>0$ , $ 1 \leq n < 3$ then $x[k]h[n-k]=
+    \sum\limits_{k=1}^{3} (3-n)$ \\ \\
+    if $n-3 \geq 0$ then 0 \\ \\
+
+
+
+            \begin{filecontents}{q5.dat}
+ n   xn
+ -3  0
+ -2  0
+ -1   1
+ 0  2
+ 1  2
+ 2  1
+ 3 0
+ 4 0
+\end{filecontents}
+    Plot of $x[n]*h[n]$
+    \begin{figure} [H]
+    \centering
+    \begin{tikzpicture}[scale=1.0]
+      \begin{axis}[
+          axis lines=middle,
+          xlabel={$n$},
+          ylabel={$h[n]$},
+          xtick={ -4,  ..., 5},
+          ytick={-1, ..., 3},
+          ymin=-1, ymax=3,
+          xmin=-3, xmax=4,
+          every axis x label/.style={at={(ticklabel* cs:1.05)}, anchor=west,},
+          every axis y label/.style={at={(ticklabel* cs:1.05)}, anchor=south,},
+          grid,
+        ]
+        \addplot [ycomb, black, thick, mark=*] table [x={n}, y={xn}] {q5.dat};
+      \end{axis}
+    \end{tikzpicture}
+\end{figure}
+    \end{enumerate}
+
+\item %write the solution of q4
+    \begin{enumerate}
+    % Write your solutions in the following items.
+    \item %write the solution of q4a
+    $y(t)=\int_{-\infty}^{\infty}x(t-\tau)h(\tau)d\tau$ \\ \\
+    $= \int_{-\infty}^{\infty} e^{-2(t-\tau)}u(t-\tau)e^{-3\tau}u(\tau)d\tau$ \\ \\
+    $ = \int_{0}^{t} e^{-2t+2\tau} e^{-3\tau} d\tau$ \\ \\
+    $= e^{-2t} \int_{0}^{t}e^{-\tau} d\tau = e^{-2t}(1-e^{-t})u(t)$ \\ \\
+    \item %write the solution of q4b
+    $h(t) = e^{2t}u(t)$ and $x(t)=u(t)-u(t-2)$ \\ \\
+    In order to calculate h(t) we need to divide the integration into three parts, since integration of $x(\tau)h(t-\tau)$ shows different behaviours in different intervals \\ \\
+    $y(t) = \int_{-\infty}^{\infty}x(\tau)h(t-\tau)d\tau$ \\ \\
+    if $t<0$ then y(t) = 0 since no overlap \\ \\
+    if $ 0 \leq t \leq 2$ then $y(t)=\int_{0}^{t}1.e^{2(t-\tau)}d\tau$ \\ \\
+    $=e^{2t}\int_{0}^{t}1.e^{-2\tau}d\tau = e^{2t}.-\dfrac{1}{2}.(e^{-2t}-1)$ \\ \\
+    $= -\dfrac{1}{2}(1-e^{2t}) = \dfrac{e^{2t}-1}{2}$ \\ \\
+    if $t>2$ then $ y(t) = \int_{0}^{2}1.e^{2(t-\tau)}d\tau$ \\ \\
+    $ = e^{2t} \int_{0}^{2}e^{-2\tau}d\tau = \dfrac{e^{2t}}{2}(1-e^{-4}) $ \\ \\
+    As a result \\ \\
+    y(t)=0, $t<0$ \\
+    $y(t)=\dfrac{e^{2t}-1}{2}$,  $0\leq t \leq 2$ \\ \\
+    $y(t)=\dfrac{e^{2t}}{2}(1-e^{-4})$,  $t > 2$\\\\
+    \end{enumerate}
+
+\item %write the solution of q5
+    \begin{enumerate}
+    % Write your solutions in the following items.
+    \item %write the solution of q5a
+    $s[n] = nu[n]$\\\\
+    We can obtain impulse response from step response as following.\\\\
+    $h[n] = s[n] - s[n-1]$\\\\
+    $h[n] = nu[n] - (n-1)u[n-1]$\\\\
+    $h[n] = nu[n] - nu[n-1] + u[n-1]$\\\\
+    $h[n] = u[n-1]$\\\\
+    \item %write the solution of q5b
+    $x[n]*h[n] = \delta[n] - \delta[n-1]$\\\\
+    $x[n]*u[n-1] = \delta[n] - \delta[n-1]$\\\\
+    $x[n]*u[n-1] = u[n] - u[n-1] - (u[n-1] - u[n-2])$\\\\
+    $x[n]*u[n-1] = u[n] - 2u[n-1] + 2u[n-2]$\\\\
+    By using the "sifting" property of delta function, we get the following.\\\\
+    $x[n] = \delta[n+1] -2\delta[n] + \delta[n-1]$\\\\
+    \item %write the solution of q5c
+    $x[n] = \delta[n+1] -2\delta[n] +\delta[n-1]$\\\\
+    $y[n] = \delta[n] - \delta[n-1]$\\\\
+    $y[n+1] =  \delta[n+1] - \delta[n]$\\\\
+    Then,\\\\
+    $y[n+1] - y[n] = \delta[n+1] - 2\delta[n] +\delta[n-1]$\\\\
+    As a result, $y[n+1] - y[n] = x[n] $\\\\
+    \end{enumerate}
+
+\item %write the solution of q6
+$s(t) = \frac{1}{2}t^{2}u(t)$\\\\
+If we take the derivative, we get impulse response.\\\\
+$h(t) = \frac{d}{dt}(s(t)) = tu(t)$\\\\
+$y(t) = x(t)*h(t) = \int^{-\infty}_{\infty}x(\tau)h(t-\tau)d\tau$\\\\
+for $t \leq 0,$  $x(t)*h(t) = 0$\\\\
+for $t > 0,$  $\int^{t}_{0}e^{-\tau}(t-\tau)d\tau$\\\\
+= $\int^{t}_{0}(te^{-\tau} - \tau e^{-\tau})d\tau = t\int^{t}_{0}e^{-\tau}d\tau - \int^{t}_{0}\tau e^{-\tau}d\tau$\\\\
+If we integrate we find, $t\int^{t}_{0}e^{-\tau}d\tau = t(-e^{-t}+1)$   (1)\\\\  If we apply integral by parts for the rest of the equation,\\\\
+Let $u = \tau$ and $dv = e^{-\tau}$\\\\
+$du = d\tau$ and $ v = -e^{-\tau}$\\\\
+$\tau(-e^{-\tau}) - \int(-e^{-t})d\tau$\\\\
+$ = (-\tau e^{-\tau} - e^{-\tau} |^{t}_{0}) = -(-te^{-t} - e^{-t} - (-1)) = te^{-t} + e^{-t} -1$   (2)\\\\
+Combining the results (1) and (2) we get, $e^{-t}u(t) + tu(t) -u(t)$\\\\
+
+
+
+
+
+\item %write the solution of q7
+    \begin{enumerate}
+    % Write your solutions in the following items.
+    \item %write the solution of q7a
+    Impulse response of the parallel configuration $\delta(t-3)$ and $\delta(t-5)$ is $\delta(t-3) + \delta(t-5)$.\\\\ Impulse response of the parallel configuration and u(t) is $u(t)*(\delta(t-3) + \delta(t-5))$.\\\\
+    Therefore, $h(t)= u(t)*(\delta(t-3) + \delta(t-5))$\\\\
+    Convolving a signal with delta function leaves the signal unchanged.\\\\ However, a shift in the delta function results in the same shift in the signal.\\\\
+    $h(t) = u(t-3) + u(t-5)$\\\\
+    \item %write the solution of q7b
+    $y(t) = x(t)*h(t) = h(t)*x(t) = \int^{\infty}_{-\infty}h(\tau)x(t-\tau)d\tau$\\\\
+    $y(t) = \int^{\infty}_{-\infty}(u(\tau -3) + u(\tau -5))e^{-3(t-\tau)}u(t-\tau)d\tau$\\\\
+    If $t \leq 3,$ $x(t)*h(t) = 0$\\\\
+    If $3 < t < 5,$ $x(t)*h(t) = \int^{t}_{3}e^{-3(t-\tau)d\tau} = e^{-3t}\int^{t}_{3}e^{3\tau}d\tau$\\\\
+    $= e^{-3t}(\frac{e^{3t} - e^{9}}{3})$\\\\
+    If $t \geq 5,$ $x(t)*h(t) = \int^{5}_{3}e^{-3(t-\tau)}d\tau + \int^{t}_{5}2e^{-3(t-\tau)}d\tau$\\\\
+    $= e^{-3t}\int^{5}_{3}e^{3\tau}d\tau + 2e^{-3t}\int^{t}_{5}e^{3\tau}d\tau$\\\\
+    $(e^{-3t}(\frac{e^{15}-e^{9}}{3}) +2e^{-3t}(\frac{e^{3t} -e^{15}}{3}))$\\\\
+    		\[
+		y(t) =
+		\begin{cases}
+		\text{0,} & -\infty < t \le 3\\\\
+		e^{-3t}(\frac{e^{3t} - e^{9}}{3}), & 3 < t \le 5 \\\\
+		(e^{-3t}(\frac{e^{15}-e^{9}}{3}) +2e^{-3t}(\frac{e^{3t} -e^{15}}{3})), & 5 < t < \infty\\\\
+		\end{cases}
+		\]\\\\
+    \item %write the solution of q7c
+    $h(t) = u(t-3) + u(t-5)$\\\\
+    $\frac{dh(t)}{dt} = \frac{du(t-3)}{dt} + \frac{du(t-5)}{dt}$\\\\
+    $\frac{dh(t)}{dt}) = \delta(t-3) + \delta(t-5)$\\\\
+    $g(t) = (\delta(t-3) + \delta(t-5))*x(t)$\\\\
+    By using distrubution property of convolution;\\\\
+    $g(t) = \delta(t-3)*x(t) + \delta(t-5)*x(t)$\\\\
+    By using the "sifting" property at the point of the occurrence, such that:\\\\
+    $\int^{\infty}_{-\infty}f(t)\delta(t-a)dt = f(a)$.
+    We get the following.\\\\
+    $g(t) = x(t-3) + x(t-5)$\\\\
+    if $x(t) = e^{-3t}u(t)$ then \\\\
+    $g(t) = e^{-3(t-3)}u(t-3) + e^{-3(t-5)}u(t-5)$
+    \end{enumerate}
+
+\end{enumerate}
+\end{document}
